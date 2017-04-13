@@ -64,6 +64,7 @@ module Kitchen
       end
       default_config :private_ip_address, nil
       default_config :iam_profile_name,   nil
+      default_config :iam_instance_profile, nil
       default_config :spot_price,         nil
       default_config :block_duration_minutes, nil
       default_config :retryable_tries,    60

@@ -106,7 +106,9 @@ module Kitchen
           end
           i[:security_group_ids] = Array(config[:security_group_ids]) if config[:security_group_ids]
           i[:user_data] = prepared_user_data if prepared_user_data
-          if config[:iam_profile_name]
+          if config[:iam_instance_profile]
+            i[:iam_instance_profile] = { :name => config[:iam_instance_profile] }
+          elsif config[:iam_profile_name]
             i[:iam_instance_profile] = { :name => config[:iam_profile_name] }
           end
           if !config.fetch(:associate_public_ip, nil).nil?
